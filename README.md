@@ -20,8 +20,9 @@ Ame World is a component management contract deployed on each chain. Users can m
 | ----------- | ----------- |
 | OP Sepolia  | 0xAFAcad0039eE54C31b0f6E44186a8113A3531334 |
 | Base Sepolia | 0xAFAcad0039eE54C31b0f6E44186a8113A3531334 |
-| Redstone Holysky  | 0x736F3D2169B42eFbD4a7A4f760ebd4f5907Ef57e |
+| Zora Sepolia   | 0xAFAcad0039eE54C31b0f6E44186a8113A3531334 |
 | OpBNB  | 0xAFAcad0039eE54C31b0f6E44186a8113A3531334 |
+| Redstone Holysky  | 0x736F3D2169B42eFbD4a7A4f760ebd4f5907Ef57e |
 
 
 ## Ame Component
@@ -139,11 +140,31 @@ contract Component is IComponent{
 ```
 
 ### Developer FAQ ###
+**How to customize response status code?**
+
+The return value type of each request method is bytes, so you can customize the response status code and other response information according to your needs.
+
+**How to disable a request method?**
+
+You can add a mapping(string=>bool) to save the request method name and available state. After the application is upgraded, manually set the available state of the disabled request method to false. And check the state every time a request is processed.
+
+**Why is there no delete method type?**
+
+The data in smart contracts is public, and deleting data is an inefficient operation. In order to facilitate data management and retrieval, you can add a mapping to save the valid state of the data, and add a put request method to set valid and invalid data. And only return valid data in get method.
+
+**How to dynamically add new request methods?**
+
+Before deploying the contract, you can add a mapping (address=>bool) to record the external contract permissions. When the application adds new functions, give the v2 contract write permissions and add new request methods to the v2 contract.
+
 **How to encode request parameters and decode response?**
+
+Use ```getMethodReqAndRes``` to get the data type of the method request parameters and the data type of the response value. Then use some js library to encode and decode it.   
+For example:   
+
 ```javascript
 var reqDataEncode = web3.eth.abi.encodeParameters(
   ["string", "uint256"],
-  ["ame", "1"]
+  ["alice", "1"]
 );
 
 var resDataDecode = web3.eth.abi.decodeParameters(
