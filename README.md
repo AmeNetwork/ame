@@ -7,7 +7,8 @@ It consists of two core parts, Ame World and Ame Component.
 ## Ame World
 Ame World is a component management contract deployed on each chain. Users can manage their own components by interacting with Ame World.
 
-### IAmeWorld.sol ###
+### [IAmeWorld.sol](./contracts/Ame/IAmeWorld.sol) ###
+
 - `register` Register a new user.  
 - `isRegistered` Check if user is registered.  
 - `addComponents` User adds some components.   
@@ -28,7 +29,8 @@ Ame World is a component management contract deployed on each chain. Users can m
 ## Ame Component
 Component is a container for user data. Component developers can customize `get`, `post`, and `put` to provide users with request methods for operating data.
 
-### IComponent.sol ###
+### [IComponent.sol](./contracts/Ame/IComponent.sol) ###
+
 - `getMethods` Get method names based on request method type.  
 - `getMethodReqAndRes` Get the data types of request parameters and return parameters based on the requested method name.  
 - `get` Request the contract to retrieve records.  
