@@ -15,6 +15,12 @@ interface IComponent{
     }
 
     /**
+     * Response data event.
+     * @param _response is the response value of the post request or put request.
+     */
+    event Response(bytes _response);
+
+    /**
      * Get method names based on request method type.
      * @param _methodTypes is the request method type.
      * @return Method names.
