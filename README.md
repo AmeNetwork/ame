@@ -24,7 +24,7 @@ Ame World is a component management contract deployed on each chain. Users can m
 | Zora Sepolia   | 0xAFAcad0039eE54C31b0f6E44186a8113A3531334 |
 | OpBNB  | 0xAFAcad0039eE54C31b0f6E44186a8113A3531334 |
 | Redstone Holysky  | 0x736F3D2169B42eFbD4a7A4f760ebd4f5907Ef57e |
-
+| Cyber Testnet  | 0xD50010428543A20220360d7B031a720Fc2c8ca1C |
 
 ## Ame Component
 Component is a container for user data. Component developers can customize `get`, `post`, and `put` to provide users with request methods for operating data.
