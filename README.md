@@ -179,6 +179,7 @@ var resDataDecode = web3.eth.abi.decodeParameters(
 - [Ame Twitter](https://twitter.com/0xAmeNetwork/)
 - [Composable Social Network](https://mirror.xyz/0xBFDc0906313Dec9DD0f38D5867060627e3ba5C9E/vp4ueV7TF8c4JzT5fL5Y4wz6CTn6aVTQBdnOoGhbHPA)
 - [Ame Javascript SDK](https://github.com/HelloRickey/ame-sdk)
+- [Ame Components Scan](https://scan.ame.network)
 
 ## Disclaimer ##
 All code in this repo has not been audited for security. Ame is an open, permissionless, community-based onchain social network. Currently it does not have any token.
