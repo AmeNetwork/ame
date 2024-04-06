@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity >=0.8.0;
-import "./Types.sol";
-import "./IComponent.sol";
+import "../../Ame/Types.sol";
+import "../../Ame/IComponent.sol";
 contract Component is IComponent{
 
     //@dev define the data type of this component

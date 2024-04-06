@@ -140,6 +140,8 @@ contract Component is IComponent{
 }
 
 ```
+### [More Component](./contracts/Components/README.md)
+
 
 ## Developer FAQ ##
 **How to customize response status code?**
