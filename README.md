@@ -178,6 +178,7 @@ var resDataDecode = web3.eth.abi.decodeParameters(
 ```
 ## Useful Links
 - [Ame Netowrk Website](https://ame.network/)
+- [Ame Network Introduction](https://www.youtube.com/watch?v=ldSopYOPukA&t=48s)
 - [Ame Twitter](https://twitter.com/0xAmeNetwork/)
 - [Composable Social Network](https://mirror.xyz/0xBFDc0906313Dec9DD0f38D5867060627e3ba5C9E/vp4ueV7TF8c4JzT5fL5Y4wz6CTn6aVTQBdnOoGhbHPA)
 - [Ame Javascript SDK](https://github.com/HelloRickey/ame-sdk)
