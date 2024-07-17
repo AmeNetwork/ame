@@ -184,6 +184,7 @@ var resDataDecode = web3.eth.abi.decodeParameters(
 - [Ame Javascript SDK](https://github.com/HelloRickey/ame-sdk)
 - [Ame Components Scan](https://scan.ame.network)
 - [How to build a social component](https://mirror.xyz/0xBFDc0906313Dec9DD0f38D5867060627e3ba5C9E/9bxItBA2muUtOzH8PLdRCIjcBw1lpvmm-im1HqtF2GY)
+- [Request Method Types(EIP-7654)](https://eips.ethereum.org/EIPS/eip-7654)
 
 ## Disclaimer ##
 All code in this repo has not been audited for security. Ame is an open, permissionless, community-based onchain social network. Currently it does not have any token.
