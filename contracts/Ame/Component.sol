@@ -16,11 +16,11 @@ contract Component is IComponent{
         return abi.encode(_methodName,_methodReq);
     }
 
-    function post(string memory _methodName,bytes memory _methodReq)public pure returns(bytes memory){
+    function post(string memory _methodName,bytes memory _methodReq)public payable returns(bytes memory){
          return abi.encode(_methodName,_methodReq);
     }
 
-    function put(string memory _methodName,bytes memory _methodReq)public pure returns(bytes memory){
+    function put(string memory _methodName,bytes memory _methodReq)public payable returns(bytes memory){
          return abi.encode(_methodName,_methodReq);
     }
     

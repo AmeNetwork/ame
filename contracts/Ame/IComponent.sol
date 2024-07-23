@@ -48,7 +48,7 @@ interface IComponent{
      * @param _methodReq is the method type.
      * @return The response to the post request.
      */
-    function post(string memory _methodName,bytes memory _methodReq)external returns(bytes memory);
+    function post(string memory _methodName,bytes memory _methodReq)external payable returns(bytes memory);
 
     /**
      * Request the contract to update a record.
@@ -56,7 +56,7 @@ interface IComponent{
      * @param _methodReq is the method type.
      * @return The response to the put request.
      */
-    function put(string memory _methodName,bytes memory _methodReq)external returns(bytes memory);
+    function put(string memory _methodName,bytes memory _methodReq)external payable returns(bytes memory);
 
     /**
      * Supported request method types.

@@ -88,7 +88,7 @@ contract AmeFeed is IComponent{
         } 
     }
 
-    function post(string memory _methodName,bytes memory _methodReq)public returns(bytes memory){
+    function post(string memory _methodName,bytes memory _methodReq)public payable returns(bytes memory){
         if(compareStrings(_methodName,"createContent")){
             (string memory content)=abi.decode(_methodReq, (string));
             createContent(content);
@@ -96,7 +96,7 @@ contract AmeFeed is IComponent{
         return abi.encode("");
     }
 
-    function put(string memory _methodName,bytes memory _methodReq)public pure returns(bytes memory){
+    function put(string memory _methodName,bytes memory _methodReq)public payable returns(bytes memory){
         return abi.encode(_methodName,_methodReq);
     }
     
