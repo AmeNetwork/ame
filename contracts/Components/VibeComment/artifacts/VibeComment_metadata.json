@@ -1,0 +1,541 @@
+{
+	"compiler": {
+		"version": "0.8.22+commit.4fc1097e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "_vibeId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "_commentId",
+						"type": "uint256"
+					}
+				],
+				"name": "DeleteComment",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "_vibeId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "_commentId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_encodeComment",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					}
+				],
+				"name": "NewComment",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "_response",
+						"type": "bytes"
+					}
+				],
+				"name": "Response",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "commentIds",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_vibeId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_commentId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_content",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_resources",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					}
+				],
+				"name": "generateBase64",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_methodName",
+						"type": "string"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_methodReq",
+						"type": "bytes"
+					}
+				],
+				"name": "get",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_vibeId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_pageNum",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_pageSize",
+						"type": "uint256"
+					}
+				],
+				"name": "getComments",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_pageNum",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_pageSize",
+						"type": "uint256"
+					}
+				],
+				"name": "getCommentsByAddress",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_methodName",
+						"type": "string"
+					}
+				],
+				"name": "getMethodReqAndRes",
+				"outputs": [
+					{
+						"internalType": "enum Types.Type[]",
+						"name": "",
+						"type": "uint8[]"
+					},
+					{
+						"internalType": "enum Types.Type[]",
+						"name": "",
+						"type": "uint8[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "enum IComponent.MethodTypes",
+						"name": "_methodTypes",
+						"type": "uint8"
+					}
+				],
+				"name": "getMethods",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "options",
+				"outputs": [
+					{
+						"internalType": "enum IComponent.MethodTypes[]",
+						"name": "",
+						"type": "uint8[]"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_methodName",
+						"type": "string"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_methodReq",
+						"type": "bytes"
+					}
+				],
+				"name": "post",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_methodName",
+						"type": "string"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_methodReq",
+						"type": "bytes"
+					}
+				],
+				"name": "put",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"events": {
+				"Response(bytes)": {
+					"params": {
+						"_response": "is the response value of the post request or put request."
+					}
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"get(string,bytes)": {
+					"params": {
+						"_methodName": "is the method name.",
+						"_methodReq": "is the method type."
+					},
+					"returns": {
+						"_0": "The response to the get request."
+					}
+				},
+				"getMethodReqAndRes(string)": {
+					"params": {
+						"_methodName": "is the method name."
+					},
+					"returns": {
+						"_0": "Data types of request parameters and return parameters."
+					}
+				},
+				"getMethods(uint8)": {
+					"params": {
+						"_methodTypes": "is the request method type."
+					},
+					"returns": {
+						"_0": "Method names."
+					}
+				},
+				"options()": {
+					"returns": {
+						"_0": "Method types."
+					}
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"post(string,bytes)": {
+					"params": {
+						"_methodName": "is the method name.",
+						"_methodReq": "is the method type."
+					},
+					"returns": {
+						"_0": "The response to the post request."
+					}
+				},
+				"put(string,bytes)": {
+					"params": {
+						"_methodName": "is the method name.",
+						"_methodReq": "is the method type."
+					},
+					"returns": {
+						"_0": "The response to the put request."
+					}
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"events": {
+				"Response(bytes)": {
+					"notice": "Response data event."
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"get(string,bytes)": {
+					"notice": "Request the contract to retrieve records."
+				},
+				"getMethodReqAndRes(string)": {
+					"notice": "Get the data types of request parameters and return parameters based on the requested method name."
+				},
+				"getMethods(uint8)": {
+					"notice": "Get method names based on request method type."
+				},
+				"options()": {
+					"notice": "Supported request method types."
+				},
+				"post(string,bytes)": {
+					"notice": "Request the contract to create a new record."
+				},
+				"put(string,bytes)": {
+					"notice": "Request the contract to update a record."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/AmeComponents/VibeComment/VibeComment.sol": "VibeComment"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Ame/IComponent.sol": {
+			"keccak256": "0x81584010ef0467be52a23ef30c544aa5c2c2eb3f30b823056b9d6006e8014a4d",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://c9a34e75e2c25a5522bee32ce1e00cd38573e5690a9ee66ab37109537e3c8450",
+				"dweb:/ipfs/QmT7BK7xgG7kmCzPBi5PqPeSJVtfWbYmq8Wx1RVSufMFDw"
+			]
+		},
+		"contracts/Ame/Types.sol": {
+			"keccak256": "0x38ec738b0db686597d0f352bbf9fc9fa57af170bd4be36d75d7ca9768e5b6aa7",
+			"license": "CC0-1.0",
+			"urls": [
+				"bzz-raw://545d7561acf274e7787dff605304e7c3f352fabf9e0103b6db8bd5b408482026",
+				"dweb:/ipfs/QmXpT5LS3Lt7rqSbcP7tDTZ7Nfd786piQ6bxdq64ji1isX"
+			]
+		},
+		"contracts/AmeComponents/VibeComment/Base64.sol": {
+			"keccak256": "0xb3bd3bc952c107ebfc64ea5521ace79640bf9ac31d6d0e3c617d3e8d621f70ae",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://ca0c110f4629f42c861c3a7dc63e6d6064ada2a55c144d100499c8b92a322251",
+				"dweb:/ipfs/QmexDBmKQMHkNF5sQToudqcfFxZUAUT6jqACVyRimX7qXP"
+			]
+		},
+		"contracts/AmeComponents/VibeComment/Strings.sol": {
+			"keccak256": "0x3c790c545d6cb2b6a8d6cb04d47508f1958ed64faa3f06e5d75277b45bbf1814",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://262294d917912785bb4d8d6c30f20f909169d9d9cb345cf6b05088eed8fe84ec",
+				"dweb:/ipfs/QmTY59sw1DrvXetehXAS3nvsVuymSuH6vuewBZYTNDK5Ve"
+			]
+		},
+		"contracts/AmeComponents/VibeComment/VibeComment.sol": {
+			"keccak256": "0x5b55f5976309fdb589becd91921a8fdf4233c108e728c3c780ec00575b975eed",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://42da2e62f6eecd8cb919c202c23e4162ee272adc2cea7111a44ed0e863b9e705",
+				"dweb:/ipfs/QmeHeCukVnH9S7ggBwmuEStc3hebuBctZPyd9yoDc7mz4K"
+			]
+		},
+		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.2/contracts/access/Ownable.sol": {
+			"keccak256": "0x24e0364e503a9bbde94c715d26573a76f14cd2a202d45f96f52134ab806b67b9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e12cbaa7378fd9b62280e4e1d164bedcb4399ce238f5f98fc0eefb7e50577981",
+				"dweb:/ipfs/QmXRoFGUgfsaRkoPT5bxNMtSayKTQ8GZATLPXf69HcRA51"
+			]
+		},
+		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.2/contracts/utils/Context.sol": {
+			"keccak256": "0x95098bd1d9c8dec4d80d3dedb88a0d949fa0d740ee99f2aa466bc308216ca6d5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7fec968dcd68e13961521fa3c7dd87baecad91a2653b19240e81f21cc4f3ba85",
+				"dweb:/ipfs/QmaXtsYt4Mphm8XHNUfk2me1cF3ssS2SqDBNFpYAzMjomC"
+			]
+		}
+	},
+	"version": 1
+}

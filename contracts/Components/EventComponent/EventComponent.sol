@@ -49,18 +49,12 @@ contract Component is IComponent{
         return methods[_methodTypes];
     } 
 
-    function get(string memory _methodName,bytes memory _methodReq)public view returns(bytes memory){
-        if(compareStrings(_methodName,"getUser")){
-            address user=abi.decode(_methodReq, (address));
-            bytes memory userData=abi.encode(users[user].name,users[user].age);
-            return userData;
-        }else{
-            return abi.encode("");
-        }  
+    function get(string memory _methodName,bytes memory _methodReq)public pure  returns(bytes memory){
+           return abi.encode(_methodName,_methodReq);
     }
 
-    function post(string memory _methodName,bytes memory _methodReq)public payable returns(bytes memory){
-        if(compareStrings(_methodName,"createUser")){
+    function post(string memory _methodName,bytes memory _methodReq)public payable  returns(bytes memory){
+        if(compareStrings(_methodName,"testEvent")){
             (string memory name,uint256 age)=abi.decode(_methodReq, (string,uint256));
             users[msg.sender]=Profiles(name,age);
             
@@ -69,20 +63,13 @@ contract Component is IComponent{
     }
 
     function put(string memory _methodName,bytes memory _methodReq)public payable returns(bytes memory){
-        if(compareStrings(_methodName,"updateUserName")){
-            (address userAddress,string memory name)=abi.decode(_methodReq, (address,string));
-            require(userAddress==msg.sender);
-            users[userAddress].name=name;
-        }
-        return abi.encode("");
+        return abi.encode(_methodName,_methodReq);
     }
     
     function options()public pure returns(MethodTypes[] memory){
-        MethodTypes[] memory methodTypes=new MethodTypes[](4);
-        methodTypes[0]=MethodTypes.GET;
-        methodTypes[1]=MethodTypes.POST;
-        methodTypes[2]=MethodTypes.PUT;
-        methodTypes[3]=MethodTypes.OPTIONS;
+        MethodTypes[] memory methodTypes=new MethodTypes[](2);
+        methodTypes[0]=MethodTypes.POST;
+        methodTypes[1]=MethodTypes.OPTIONS;
         return methodTypes;
     }
 

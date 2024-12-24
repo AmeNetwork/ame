@@ -140,7 +140,7 @@ contract Component is IComponent{
 }
 
 ```
-### [More Components](./contracts/Components/README.md)
+### [More Components](./contracts/Components/)
 
 
 ## Developer FAQ ##
