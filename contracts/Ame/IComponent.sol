@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: GPL-3.0
+// SPDX-License-Identifier: CC0-1.0
 pragma solidity >=0.8.0;
 import "./Types.sol";
 interface IComponent{
@@ -35,6 +35,13 @@ interface IComponent{
     function getMethodReqAndRes(string memory _methodName) external view returns(Types.Type[] memory ,Types.Type[] memory );
 
     /**
+     * Get the instruction of method based on the requested method name.
+     * @param _methodName is the method name.
+     * @return instruction
+     */    
+    function getMethodInstruction(string memory _methodName) external view returns(string memory);
+
+    /**
      * Request the contract to retrieve records.
      * @param _methodName is the method name.
      * @param _methodReq is the method type.
@@ -48,7 +55,7 @@ interface IComponent{
      * @param _methodReq is the method type.
      * @return The response to the post request.
      */
-    function post(string memory _methodName,bytes memory _methodReq)external payable returns(bytes memory);
+    function post(string memory _methodName,bytes memory _methodReq)external payable returns(bytes memory) ;
 
     /**
      * Request the contract to update a record.
